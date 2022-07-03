@@ -13,3 +13,8 @@ if(!$con)
 }
 echo "Succes connecting to database";
 ?>
+
+
+<?php
+    //echo 
+?>

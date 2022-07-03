@@ -69,7 +69,7 @@ if($result->num_rows===1)
     $_SESSION['email']=$email;
     $_SESSION['Password']=$pass;
     $_SESSION['U_ID']=$user_id;
-  //  echo "<br> UID  ".$_SESSION['U_ID']." U_ID <br>";
+    echo "<br> UID  ".$_SESSION['U_ID']." U_ID <br>";
     
     if($repass!==$pass)
     {
