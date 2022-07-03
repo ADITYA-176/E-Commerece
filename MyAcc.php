@@ -27,15 +27,15 @@ if(isset($_POST['done']))
     $r1=mysqli_query($con,$s1);
     $size=$r1->num_rows;
     echo " SIZE IS ".$size."<br>";
- /*   for($i=0;$i<$size;$i=$i+1)
+    for($i=0;$i<$size;$i=$i+1)
     {
         $indx='P';
         $indx2=$ch[$i];
         $indx1=$indx.$indx2;
-        echo " VAR IS ".$indx1."<br>";
+       // echo " VAR IS ".$indx1."<br>";
         $vari=$_POST[$indx1];
         $ele=fun($vari);
-        echo $vari."Hey <br>";
+      //  echo $vari."Hey <br>";
         if($_POST[$vari]<0||$ele===1)
         {
             if($i<6)
@@ -56,32 +56,45 @@ if(isset($_POST['done']))
     }
 
    // updateTrans();
-  /* $a="SELECT * FROM Rel";
+   $a="SELECT * FROM Rel";
     $result1=mysqli_query($con,$a);
     $Trs=0;
     $id=0;
     if($result1->num_rows==0)
     {
+        echo "CASSDFSDFASFDSAFSDFFSDA";
         $Trs=1;
-    }*/
- /*   else 
+    }
+    else 
     {
         $sq="SELECT MAX(Trans_Num) FROM Rel";
-        $re=mysqli_query($con,$sq);
-        $Trs=$row["Trans_Num"];
-        $Trs+=1;
-    }*/
-       /* for($i=0;$i<$size;$i++)
+        $re=$con->query($sq);
+        $row = mysqli_fetch_array($re);
+     //   echo $row['MAX(Trans_Num)']." WILL BE<br>";
+        $Trs=($row['MAX(Trans_Num)'])+1;
+        echo $Trs."SFDSFDF";
+      //  $Trs+=1;
+    }
+    echo " ID IS ".$id." TRS IS ".$Trs;
+   echo $_SESSION['USERNAME']." PZ<br>" ;
+  echo $_SESSION['email']." PZ<br>" ;
+  echo $_SESSION['Password']." PZ<br>" ;
+  echo $_SESSION['U_ID']." PS <br>";
+        for($i=0;$i<$size;$i++)
         {
             $indx='P';
             $indx2=$ch[$i];
             $indx1=$indx.$indx2;
             $var=$_POST[$indx1];
-            if($_POST[$var]>0)
+            echo $var."<br> AIS ";
+            if($var>0)
             {
-                $sq="INSERT INTO Rel ('U_id','Pro_ID','Pro_Count','Trans_Num') VALUES ('$_SESSION['U_ID]','$var','$_POST[$var]','$Trs')";
-                $rs=mysqli_query($con,$sq);
-                if($con->multi_query($esql) === TRUE)
+               $v1=$_SESSION['U_ID'];
+               echo " PLZ ".$v1;
+               echo $v1." ".$indx1." ".$var." ".$Trs;
+              
+                $sq="INSERT INTO `Rel` (`U_ID`,`Pro_ID`,`Pro_Count`,`Trans_Num`) VALUES ('$v1','$indx1','$var','$Trs')";
+                if($con->multi_query($sq) === TRUE)
                 {
                     echo "SUCCESS<br><br>";
                 }
@@ -89,9 +102,9 @@ if(isset($_POST['done']))
                 {
                     echo "Error: " . $esql . "<br>" . $con->error;
                 }
-                $Trs+=1;
+                //$Trs+=1;
             }
-        }*/
+        }
     
 }
  /*   if($_SESSION['U_ID']==="0")
