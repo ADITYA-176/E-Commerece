@@ -1,0 +1,71 @@
+body
+{
+    background-color: cadetblue;
+    align-items: center;
+    text-align: center;
+}
+body h2
+{
+    margin-top: -10px;
+}
+.error
+{
+    border: 0px solid black;
+    max-width: 5cm;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    border-radius: 2px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: burlywood;
+}
+form
+{
+
+    margin-left: 400px;
+    width: 500px;
+    border: 2px solid cadetblue;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 300px;
+}
+input
+{
+    border:2px solid rgb(201, 200, 200);
+    width: 210px;
+    height: 28px;
+    border-radius: 4px;
+    margin-top:5px;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+label
+{
+    margin-left: -140px;
+    color: rgb(117, 117, 117);
+}
+button
+{
+    border:1px solid black;
+    border-radius: 4px;
+    width: 70px;
+    height: 30px;
+    margin:6px;
+    font-size: 16px;
+    margin-left: -20px;
+    background: rgb(63, 63, 63);
+    color: blanchedalmond;
+    margin-left: 150px;
+}
+.signup
+{
+    height: 30px;
+    color: rgb(216, 215, 214);
+    margin-top:-30px;
+    margin-left: -70px;
+}
+.signup a
+{
+    color: rgb(199, 164, 111);
+}
