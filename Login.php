@@ -63,9 +63,13 @@ if($result->num_rows===1)
     echo "WENT";
     $row=mysqli_fetch_assoc($result);
     $repass=$row["Pass"];
+    echo "REPASS ".$row["Pass"]."<br>";
     $user_name=$row["Name"];
+    echo "Name ".$row["Name"]."<br>";
     $user_id=$row["U_id"];
+    echo "U_id ".$row["U_id"]."<br>";
     $_SESSION['USERNAME']=$user_name;
+    echo $_SESSION['USERNAME']." us name IS";
     $_SESSION['email']=$email;
     $_SESSION['Password']=$pass;
     $_SESSION['U_ID']=$user_id;
