@@ -1,112 +1,7 @@
 <?php include('Con.php');
+check();
  ?>
 <?php
-
-
-function fun($c)
-{
-    $d=strval($c);
- //   echo "<br> THE VAL IS ".$d."<br>";
-    for($i1 =0;$i1<strlen($d);$i1++)
-    {
-   //     echo "<br> CHAR is ".$d[$i1]."<br>";
-        if(!($d[$i1]>='0'&&$d[$i1]<='9'))
-        {
-            return 1;
-        } 
-    }
-    return 0;
-}
-
-
-if(isset($_POST['done']))
-{
-    $ch =array('1','2','3','4','5','6','7','8','9',"10","11","12","13","14","15","16","17","18");
-    $indx=0;
-    $s1="SELECT * FROM Product";
-    $r1=mysqli_query($con,$s1);
-    $size=$r1->num_rows;
-  //  echo " SIZE IS ".$size."<br>";
-    for($i=0;$i<$size;$i=$i+1)
-    {
-        $indx='P';
-        $indx2=$ch[$i];
-        $indx1=$indx.$indx2;
-       // echo " VAR IS ".$indx1."<br>";
-        $vari=$_POST[$indx1];
-        $ele=fun($vari);
-      //  echo $vari."Hey <br>";
-        if($_POST[$vari]<0||$ele===1)
-        {
-            if($i<6)
-            {
-                header("Location: Products1.php?error=Invalid Quantity");
-            }
-            else if($i<12)
-            {
-                header("Location: Products2.php?error=Invalid Quantity");
-            }
-            else 
-            {
-             //   echo "WHY BRO ".
-                header("Location: Products3.php?error=Invalid Quantity");
-            }
-        }
-      //  $indx=$indx+1;
-    }
-
-   // updateTrans();
-   $a="SELECT * FROM Rel";
-    $result1=mysqli_query($con,$a);
-    $Trs=0;
-    $id=0;
-    if($result1->num_rows==0)
-    {
-  //      echo "CASSDFSDFASFDSAFSDFFSDA";
-        $Trs=1;
-    }
-    else 
-    {
-        $sq="SELECT MAX(Trans_Num) FROM Rel";
-        $re=$con->query($sq);
-        $row = mysqli_fetch_array($re);
-     //   echo $row['MAX(Trans_Num)']." WILL BE<br>";
-        $Trs=($row['MAX(Trans_Num)'])+1;
-   //     echo $Trs."SFDSFDF";
-      //  $Trs+=1;
-    }
-  //  echo " ID IS ".$id." TRS IS ".$Trs;
-//   echo $_SESSION['USERNAME']." PZ<br>" ;
-  //echo $_SESSION['email']." PZ<br>" ;
-  ///echo $_SESSION['Password']." PZ<br>" ;
-  //echo $_SESSION['U_ID']." PS <br>";
-        for($i=0;$i<$size;$i++)
-        {
-            $indx='P';
-            $indx2=$ch[$i];
-            $indx1=$indx.$indx2;
-            $var=$_POST[$indx1];
-         //   echo $var."<br> AIS ";
-            if($var>0)
-            {
-               $v1=$_SESSION['U_ID'];
-        //       echo " PLZ ".$v1;
-          //     echo $v1." ".$indx1." ".$var." ".$Trs;
-              
-            $sq="INSERT INTO `Rel` (`U_ID`,`Pro_ID`,`Pro_Count`,`Trans_Num`) VALUES ('$v1','$indx1','$var','$Trs')";
-                if($con->multi_query($sq) === TRUE)
-                {
-             //       echo "SUCCESS<br><br>";
-                }
-                else
-                {
-              //      echo "Error: " . $esql . "<br>" . $con->error;
-                }
-                //$Trs+=1;
-            }
-        }
-    
-}
 
 
 
@@ -254,12 +149,55 @@ if(isset($_POST['done']))
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="User.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
+    <style>
+        ul li 
+        {
+            display: inline;
+        }
+    </style>
     <div class="top">
         <img src="Logo.png" style="width: 17%; height: auto; margin-left: 15cm; ">
     </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li style="margin-top:7px;">
+            <a href="Web1.php" style="text-decoration:none; font-size:18px; margin-left: 1cm; margin-right: 20px;"> Home </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle"  style="color: rgb(49, 157, 229); font-size:18px;" href="User.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Buy
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="Products1.php">Leds</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Products2.php">Decorative Lights</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Products3.php">Interior Lights</a></li>
+          </ul>
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px; margin-left:25cm" href="MyAcc.php">My Account</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px;  margin-left:1cm;" href="Login.php">Logout</a>
+          </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!!! NAV > 
     <div class="basicinfo" style="width: 24cm; margin-left:7cm; background:rgb(228, 228, 228);border-radius: 5px; height: auto;">
         <h1 style="margin-left:8cm ; margin-top:1cm;"> Account Details </h1>
         <style>
@@ -298,7 +236,7 @@ if(isset($_POST['done']))
                 </td>
             </tr>
         </table>
-        <div class="Transcations">
+        <div class="Transcations" style="margin-top:1.7cm ;">
             <p style="margin-left:6cm ; font-size:40px;">
                 Transaction History 
             </p>
@@ -340,26 +278,39 @@ if(isset($_POST['done']))
           //         echo "WHy ";
                    ?>
                    <style>
+                    * 
+                    {
+                        font-family: 'PT Sans', sans-serif;
+
+;
+                    }
                     th,td 
                     {
                         text-align:center;
+                        border-right: 1px solid black;
+                        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
                     }
+                    th 
+                    {
+                        border-bottom: 1px solid black;
+                    }
+                    
                     </style>
-                    <table border="1px solid black" style="border-collapse:collapse; margin-left: 1cm;">
+                    <table border="1px solid black !important" style="border-collapse:collapse !important ; margin-left: 1cm !important ;">
                             <tr>
-                                <th style="width:1.7cm;"text-align:center;>
+                                <th style="width:1.7cm !important;"text-align:center;>
                                     S.No 
                                 </th>
-                                <th style="width:4cm;" text-align:center; >
+                                <th style="width:4cm !important ;" text-align:center; >
                                     Product Name 
                                 </th>
-                                <th  style="width:7cm;" text-align:center; > 
+                                <th  style="width:7cm !important;" text-align:center; > 
                                     Product Image 
                                 </th>
-                                <th  style="width:4cm;" text-align:center; >
+                                <th  style="width:4cm !important;" text-align:center; >
                                     Product Price (Rs)
                                 </th>
-                                <th  style="width:4cm;" text-align:center; >
+                                <th  style="width:4cm !important;" text-align:center; >
                                     Product Quantity
                                 </th>
                             </tr>
@@ -444,6 +395,7 @@ if(isset($_POST['done']))
             ?>
         </div>
     </div>
-    
+    <script src="JS.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -8,7 +8,9 @@
 </head>
 <body>
     
-<?php include('Con.php'); ?>
+<?php include('Con.php');
+$_SESSION['fl']=0;
+?>
 <?php
 /*
 session_start();
@@ -52,7 +54,7 @@ function login1()
 <?php
 $sql="SELECT * FROM UserInfo WHERE email='$email'";
 
-$_SESSION['U_ID']="0";
+//$_SESSION['U_ID']="0";
 
 
 $result=mysqli_query($con,$sql);
@@ -103,6 +105,7 @@ echo $result->num_rows."<br> im srry <br>";
 
     echo $result1->num_rows."<br> HEY <br>";*/
   //  echo "CAME\n";
+     $_SESSION['fl']=1;
      header("Location: Products1.php");
     }
 }

@@ -1,5 +1,6 @@
 <?php
-
+    include('Con.php');
+    check();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@
     <title>User</title>
 </head>
 <body>
-<a href="Web.html">
+<a href="Web1.php">
             <div class="logo">
             <img src="Logo.png" widht="1%" height="1%" alt="HTML tutorial" />
 
@@ -23,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li style="margin-top:7px;">
-            <a href="Web1.html" style="text-decoration:none; font-size:18px; margin-left: 1cm; margin-right: 20px;"> Home </a>
+            <a href="Web1.php" style="text-decoration:none; font-size:18px; margin-left: 1cm; margin-right: 20px;"> Home </a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  style="color: rgb(49, 157, 229); font-size:18px;" href="User.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,8 +38,11 @@
             <li><a class="dropdown-item" href="Products3.php">Interior Lights</a></li>
           </ul>
           <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); font-size:18px; margin-left:29cm" href="MyAcc.php">My Account</a>
+          <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px; margin-left:25cm" href="MyAcc.php">My Account</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px;  margin-left:1cm;" href="Login.php">Logout</a>
+          </li>
         </li>
       </ul>
     </div>
@@ -46,7 +50,7 @@
 </nav>
 <!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!>
 <div class="bulbs">
-    <form action="MyAcc.php" method="POST">
+    <form action="Acc.php" method="POST">
         <script>
     function funp(p1)
     {

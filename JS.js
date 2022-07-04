@@ -37,6 +37,10 @@ function check1()
             return;
         }
     }
+    for(var i=0;i<ele.length;i++)
+    {
+        ele[i].value=0;
+    }
 }
 
 

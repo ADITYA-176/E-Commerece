@@ -1,6 +1,10 @@
 //<!/*
 //INSERT INTO `AUTH` (`Name`, `Password`, `Fid`) VALUES ('Aditya', 'Password', '1'); */>
-<?php include('Con.php'); ?>
+<?php include('Con.php');
+
+$_SESSION['fl']=0;
+
+?>
 <?php   
 
 /*
@@ -88,21 +92,25 @@ session_start();
         header("Location: Validate2.php?error=email already exits");
         exit();
     }
-    else if()
+    else 
     {
         $sql1="INSERT INTO `UserInfo` (`Name`, `email`,`Pass`) VALUES ('$uname', '$email', '$pass');";
         if($con->multi_query($sql1) === TRUE )
         {
-           
-            $_SESSION['Flag']=1;
+            $sq="SELECT MAX(U_id) FROM UserInfo";
+            $res=$con->query($sq);
+            
+            $rw=mysqli_fetch_array($res);
+            $uid=$rw[0];
+            $_SESSION['fl']=1;
+            $_SESSION['USERNAME']=$uname;
+            $_SESSION['email']=$email;
+            $_SESSION['Password']=$pass;
+            $_SESSION['U_ID']=$uid;
+            echo "THERE";
+            echo $uid."SDSDF";
             header("Location: Products1.php");
-
-
-   }
-        else if( $_SESSION['Flag']!=1)
-        {
-            header("Location: Validate2.php?error=Error Occured".$con->error);
-            exit();
         }
+
     }
     ?>

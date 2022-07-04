@@ -1,5 +1,8 @@
 <?php 
+    include('Con.php');
 
+
+    //
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -12,8 +15,12 @@
     </head>
     <body>
         <di class="Img1">
-            <a href="Web.html"><img src="Logo.png"></a>
+            <a href="Web.php"><img src="Logo.png"></a>
         </di>
+
+
+
+        
         <form action="Login.php" method="post">
             <h2>Login</h2>
             <div class="Login">
@@ -43,7 +50,7 @@
         </div>
         <div class="hme" style=" margin-left:5.3cm;background:rgb(62, 62, 62);  border-radius:5px;
          width:2cm; height:1cm;">
-        <a href="Web.html" style=" font-size: 20px; color:bisque; text-decoration: none;"><p style="margin-top: 0px;">Home</p></a> 
+        <a href="Web.php" style=" font-size: 20px; color:bisque; text-decoration: none;"><p style="margin-top: 0px;">Home</p></a> 
         </div>
         </form>
     </body>
