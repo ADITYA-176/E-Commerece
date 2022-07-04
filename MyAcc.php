@@ -261,7 +261,7 @@ if(isset($_POST['done']))
         <img src="Logo.png" style="width: 17%; height: auto; margin-left: 15cm; ">
     </div>
     <div class="basicinfo" style="width: 24cm; margin-left:7cm; background:rgb(228, 228, 228);border-radius: 5px; height: auto;">
-        <h1 style="margin-left:1cm ; margin-top:1cm;"> Account Details </h1>
+        <h1 style="margin-left:8cm ; margin-top:1cm;"> Account Details </h1>
         <style>
             td 
             {
@@ -298,6 +298,152 @@ if(isset($_POST['done']))
                 </td>
             </tr>
         </table>
+        <div class="Transcations">
+            <p style="margin-left:6cm ; font-size:40px;">
+                Transaction History 
+            </p>
+            <?php
+                $var=$_SESSION['U_ID']."IS ";
+              //  echo $var;
+                $sq="SELECT DISTINCT(Trans_Num) FROM Rel WHERE U_ID='$var'";
+                $res=mysqli_query($con,$sq);
+                $rows=$res->num_rows;
+               // echo "TOTAL ROWS ARE ".$rows." Hey ";
+               $re=$con->query($sq);
+            $i=1;
+              while($row=mysqli_fetch_array($re))
+              {
+                    ?>
+                    <p style="font-size:24px; margin-left:1cm;">
+
+                        Transaction No:<?php  echo $i."<br> "; 
+                        $Tran=$row[0];
+                        $sq="SELECT Date,Time FROM Rel WHERE Trans_Num='$Tran'";
+                        $r1=$con->query($sq);
+                        $r2=mysqli_fetch_array($r1);
+
+                    //    $re1=$con->query($sq);
+                        echo "  Date Of Purchase: ".$r2[0]." ";
+                        echo "Time Of Purchase: ".$r2[1]." ";
+                        echo "<br>";
+                        // TIME STAMP ?>
+
+              </p>
+              <?php
+                   // echo $i;
+                 //   $i++;
+                 //echo "FE";
+                   $Tran=$row[0];
+                   $sq="SELECT * FROM Rel WHERE Trans_Num='$Tran'";
+                   $re1=$con->query($sq);
+                   //  Serial Num Product Name Product Image Product Price Product Quauntity  
+          //         echo "WHy ";
+                   ?>
+                   <style>
+                    th,td 
+                    {
+                        text-align:center;
+                    }
+                    </style>
+                    <table border="1px solid black" style="border-collapse:collapse; margin-left: 1cm;">
+                            <tr>
+                                <th style="width:1.7cm;"text-align:center;>
+                                    S.No 
+                                </th>
+                                <th style="width:4cm;" text-align:center; >
+                                    Product Name 
+                                </th>
+                                <th  style="width:7cm;" text-align:center; > 
+                                    Product Image 
+                                </th>
+                                <th  style="width:4cm;" text-align:center; >
+                                    Product Price (Rs)
+                                </th>
+                                <th  style="width:4cm;" text-align:center; >
+                                    Product Quantity
+                                </th>
+                            </tr>
+                <?php
+                            
+                            $sno=1;
+                            $TotalPrice=0;
+                   while($r1=mysqli_fetch_array($re1))
+                   {
+                        $uid=$r1['U_ID'];
+                        $Pid=$r1['Pro_ID'];
+                        $Prcnt=$r1['Pro_Count'];
+                        $Trid=$r1['Trsc_ID'];
+                        $Trnum=$r1['Trans_Num'];
+                        $dt=$r1['Date'];
+                        $ti=$r1['Time'];
+                        $dt1=strtotime($dt);
+
+                      //     $dt=strtotime($row[0]);
+                       // echo "DATE IS ".date('m/d/y',$dt1)."<br>";
+//                          echo $uid." ".$Pid." ".$Prcnt." ".$Trid." ".$Trnum." ".$dt." ".$ti;
+                       // echo $Pid;
+                        $s="SELECT Pname,Productname,Pro_Price FROM Product WHERE Productname='$Pid'";
+                        $rz=$con->query($s);
+                        $rw=mysqli_fetch_array($rz);
+                        $ProName = $rw[0]; 
+                        $Proimg = $rw[1];
+                        $ProPrice = $rw[2];
+                        $TotalPrice+=($ProPrice*$Prcnt);
+            //            echo $ProName." ".$Proimg." ".$ProPrice;
+              //          echo "<br>";
+                   /*    */ ?>
+
+                        <tr>
+                            <td>
+                                <?php echo $sno; 
+                                $sno+=1;
+                                ?>
+                            </td>
+                            <td>
+                            
+                                <?php echo $ProName; ?>
+
+                            </td>
+                            <td>
+
+                                <?php echo "<img style='width:35%;height:auto; border-radius:5px; margin-top:0.3cm; margin-bottom:0.3cm;' src='".$Proimg.".jpg'"; ?>
+                            </td>
+                            <td>
+                                <?php echo $ProPrice; ?>
+                            </td>
+                            <td>
+                                <?php echo $Prcnt; ?>
+                            </td>
+                        </tr>
+                    
+
+                    
+                    <?php
+
+                    
+                   }?>
+                <tr>
+                    <td colspan="3" style="height:1cm ;">
+                        Total Amount
+                    </td>
+                    <td colspan="2">
+                        <?php 
+                        echo $TotalPrice;
+                        ?>
+                    </td>
+                    
+                </tr>
+
+                </table>
+                <br>
+                <br>
+                <?php
+                   $i++;
+                  // echo "END <br>";
+              }
+            ?>
+        </div>
     </div>
+    
 </body>
 </html>
