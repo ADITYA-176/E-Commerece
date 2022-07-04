@@ -18,6 +18,8 @@ $b5=0;
 $b6=0;
 $_SESSION['U_ID']="0";
 
+$_SESSION['fl']=0;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +32,7 @@ $_SESSION['U_ID']="0";
     <title>User</title>
 </head>
 <body>
-<a href="Web.html">
+<a href="Web.php">
             <div class="logo">
             <img src="Logo.png" widht="1%" height="1%" alt="HTML tutorial" />
 
@@ -41,7 +43,7 @@ $_SESSION['U_ID']="0";
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li style="margin-top:7px;">
-            <a href="http://192.168.64.2/LiteTech/Web.html" style="text-decoration:none; font-size:18px; margin-left: 1cm; margin-right: 20px;"> Home </a>
+            <a href="Web.php" style="text-decoration:none; font-size:18px; margin-left: 1cm; margin-right: 20px;"> Home </a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"  style="color: rgb(49, 157, 229); font-size:18px;" href="User.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,7 +85,7 @@ $_SESSION['U_ID']="0";
     }
 </script>
         <div class="bulb1">
-        <img src="Bulb1.jpg" class="img-fluid">
+        <img src="P1.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> LED </p>

@@ -16,5 +16,12 @@ if(!$con)
 
 
 <?php
-    //echo 
+function check()
+{
+    if($_SESSION['fl']!=1)
+    {
+        echo "CAME<br>";
+        header("Location: Validate.php?error=Login is Required");
+    }
+}
 ?>
