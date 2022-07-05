@@ -52,6 +52,8 @@ check();
                       <li><a class="dropdown-item" href="Products2.php">Decorative Lights</a></li>
                       <!li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="Products3.php">Interior Lighting</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="Products4.php">New Products</a></li>
                     </ul>
                   </li>
                   <li class="nav-item">

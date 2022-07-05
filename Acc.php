@@ -18,12 +18,13 @@ if(isset($_POST['done']))
 echo isset($_POST['done'])." ARE ";*/
 
 
+echo "DSSsdsa   ";
 
-
-
+//echo $_POST['P19']." ok ".$_POST['P20'];
 if(isset($_POST['done']))
 {
-  echo $_POST['P1']." ".$_POST['P2']." ".$_POST['P3']." ".$_POST['P4']." ";
+
+  //echo $_POST['P19']." ".$_POST['P20']." ".$_POST['P3']." ".$_POST['P4']." ";
   function fun($c)
 {
     $d=strval($c);
@@ -40,16 +41,16 @@ if(isset($_POST['done']))
 }
 
   echo "CAME";
-    $ch =array('1','2','3','4','5','6','7','8','9',"10","11","12","13","14","15","16","17","18");
-    $indx=0;
+    //$ch =array('1','2','3','4','5','6','7','8','9',"10","11","12","13","14","15","16","17","18");
+    //$indx=0;
     $s1="SELECT * FROM Product";
     $r1=mysqli_query($con,$s1);
     $size=$r1->num_rows;
     echo " SIZE IS ".$size."<br>";
-    for($i=0;$i<$size;$i=$i+1)
+    for($i=1;$i<=$size;$i=$i+1)
     {
         $indx='P';
-        $indx2=$ch[$i];
+        $indx2=strval($i);
         $indx1=$indx.$indx2;
         echo " VAR IS ".$indx1."<br>";
         $vari=$_POST[$indx1];
@@ -57,18 +58,22 @@ if(isset($_POST['done']))
         echo $vari."Hey <br>";
         if($_POST[$vari]<0||$ele===1)
         {
-            if($i<6)
+            if($i<=6)
             {
                 header("Location: Products1.php?error=Invalid Quantity");
             }
-            else if($i<12)
+            else if($i<=12)
             {
                 header("Location: Products2.php?error=Invalid Quantity");
             }
-            else 
+            else if($i<=18)
             {
              //   echo "WHY BRO ".
                 header("Location: Products3.php?error=Invalid Quantity");
+            }
+            else 
+            {
+              header("Location: Products3.php?error=Invalid Quantity");
             }
         }
       //  $indx=$indx+1;
@@ -99,10 +104,10 @@ if(isset($_POST['done']))
   //echo $_SESSION['email']." PZ<br>" ;
   ///echo $_SESSION['Password']." PZ<br>" ;
   //echo $_SESSION['U_ID']." PS <br>";
-        for($i=0;$i<$size;$i++)
+        for($i=1;$i<=$size;$i++)
         {
             $indx='P';
-            $indx2=$ch[$i];
+            $indx2=strval($i);
             $indx1=$indx.$indx2;
             $var=$_POST[$indx1];
             echo $var."<br> AIS ";

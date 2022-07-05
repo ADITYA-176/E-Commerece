@@ -166,7 +166,7 @@ check();
                                     //    echo $pn ;
                                         $p1=$pid.".jpg";
                                   //      echo $p1;
-                                        echo "<img style='width:35%;height:auto; border-radius:5px; margin-top:0.3cm; margin-bottom:0.3cm;' src='$p1'";
+                                        echo "<img style='width:15%;height:auto; border-radius:5px; margin-top:0.3cm; margin-bottom:0.3cm;' src='$p1'";
                               //          echo "<img src='".$p1'>";
                                         ?>
                                     </p>
