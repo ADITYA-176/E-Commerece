@@ -37,35 +37,4 @@ function check1()
             return;
         }
     }
-    for(var i=0;i<ele.length;i++)
-    {
-        ele[i].value=0;
-    }
 }
-
-
-/*
-}*/
-/*
-function check1()
-{
-  //  var ele=document.getElementsByClassName("NUM");
-    alert("CMAE");
-    /*
-    for(var i=0;i<ele.length;i++)
-    {
-        if(ele[i]<0)
-        {
-            alert("Selected Quantity Shouldn't Be Negative");
-            window.location.href = "http://www.w3schools.com";
-            return;
-        }
-        if(check2(ele[i]))
-        {
-            alert("Invalid Qunatity");
-            window.location.href = "http://www.w3schools.com";
-            return;
-        }
-
-    }
-}*/

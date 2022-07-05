@@ -106,7 +106,18 @@ echo $result->num_rows."<br> im srry <br>";
     echo $result1->num_rows."<br> HEY <br>";*/
   //  echo "CAME\n";
      $_SESSION['fl']=1;
-     header("Location: Products1.php");
+     echo $_SESSION['U_ID']." ";
+     
+     if($_SESSION['U_ID']==23)
+     {
+     //   echo "CAME ";
+        header("Location: Admin.php");
+     }
+     else 
+     {
+        header("Location: Products1.php");
+     }
+    
     }
 }
 else

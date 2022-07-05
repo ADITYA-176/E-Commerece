@@ -110,7 +110,7 @@ $_SESSION['fl']=0;
                 </div>
         </div>
         <div class="bulb2">
-            <img src="Bulb2.jpg" class="img-fluid">
+            <img src="P2.jpg" class="img-fluid">
             <div class="Bor1"></div>
             <div class="font-head">
             <p> LED </p>
@@ -138,7 +138,7 @@ $_SESSION['fl']=0;
              
         </div>
             <div class="bulb3">
-                <img src="Bulb3.jpg" class="img-fluid" >
+                <img src="P3.jpg" class="img-fluid" >
                 <div class="Bor1"></div>
                 <div class="font-head">
                 <p> LED </p>
@@ -163,7 +163,7 @@ $_SESSION['fl']=0;
                 </div>
                 </div>
                 <div class="bulb4">
-        <img src="Bulb4.jpg" class="img-fluid">
+        <img src="P4.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> LED </p>
@@ -191,7 +191,7 @@ $_SESSION['fl']=0;
              
         </div>
        <div class="bulb5">
-        <img src="Bulb5.jpg" class="img-fluid">
+        <img src="P5.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> LED </p>
@@ -216,7 +216,7 @@ $_SESSION['fl']=0;
                 </div>
         </div>
         <div class="bulb6">
-        <img src="Bulb6.jpg" class="img-fluid">
+        <img src="P6.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> LED </p>

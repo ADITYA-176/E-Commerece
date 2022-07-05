@@ -84,7 +84,7 @@ $_SESSION['fl']=0;
     }
 </script>
         <div class="bulb1">
-        <img src="Dc1.jpg" class="img-fluid">
+        <img src="P7.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> TWIG Lights </p>
@@ -108,7 +108,7 @@ $_SESSION['fl']=0;
                 </div>
         </div>
         <div class="bulb2">
-            <img src="DC2.jpg" class="img-fluid">
+            <img src="P8.jpg" class="img-fluid">
             <div class="Bor1"></div>
             <div class="font-head">
             <p> LED String lights </p>
@@ -135,7 +135,7 @@ $_SESSION['fl']=0;
              
         </div>
             <div class="bulb3">
-                <img src="DC3.jpg" class="img-fluid" >
+                <img src="P9.jpg" class="img-fluid" >
                 <div class="Bor1"></div>
                 <div class="font-head">
                 <p> LED Window Curtain </p>
@@ -159,7 +159,7 @@ $_SESSION['fl']=0;
                 </div>
                 </div>
                 <div class="bulb4">
-        <img src="DC4.jpg" class="img-fluid">
+        <img src="P10.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> LED </p>
@@ -187,7 +187,7 @@ $_SESSION['fl']=0;
              
         </div>
        <div class="bulb5">
-        <img src="DC5.jpg" class="img-fluid">
+        <img src="P11.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> Fairy Lights </p>
@@ -212,7 +212,7 @@ $_SESSION['fl']=0;
                 </div>
         </div>
         <div class="bulb6">
-        <img src="DC6.jpg" class="img-fluid">
+        <img src="P12.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> String Fairy Lights </p>

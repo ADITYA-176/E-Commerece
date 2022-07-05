@@ -3,9 +3,28 @@
 include('Con.php');
 check();
 
+/*
+echo "THANK YOU";
+echo $_POST['done'];
+echo $_POST['P1'];*/
+
+/*
+echo isset($_POST['done'])."  ARECSDC ".$_POST['done'] ."SDA ";
+$_POST['done']=null;
+if(isset($_POST['done']))
+{
+    echo "CAME\n";
+}
+echo isset($_POST['done'])." ARE ";*/
 
 
-function fun($c)
+
+
+
+if(isset($_POST['done']))
+{
+  echo $_POST['P1']." ".$_POST['P2']." ".$_POST['P3']." ".$_POST['P4']." ";
+  function fun($c)
 {
     $d=strval($c);
  //   echo "<br> THE VAL IS ".$d."<br>";
@@ -19,32 +38,23 @@ function fun($c)
     }
     return 0;
 }
-/*
-echo isset($_POST['done'])."  ARECSDC ".$_POST['done'] ."SDA ";
-$_POST['done']=null;
-if(isset($_POST['done']))
-{
-    echo "CAME\n";
-}
-echo isset($_POST['done'])." ARE ";*/
 
-if(isset($_POST['done']))
-{
+  echo "CAME";
     $ch =array('1','2','3','4','5','6','7','8','9',"10","11","12","13","14","15","16","17","18");
     $indx=0;
     $s1="SELECT * FROM Product";
     $r1=mysqli_query($con,$s1);
     $size=$r1->num_rows;
-  //  echo " SIZE IS ".$size."<br>";
+    echo " SIZE IS ".$size."<br>";
     for($i=0;$i<$size;$i=$i+1)
     {
         $indx='P';
         $indx2=$ch[$i];
         $indx1=$indx.$indx2;
-       // echo " VAR IS ".$indx1."<br>";
+        echo " VAR IS ".$indx1."<br>";
         $vari=$_POST[$indx1];
         $ele=fun($vari);
-      //  echo $vari."Hey <br>";
+        echo $vari."Hey <br>";
         if($_POST[$vari]<0||$ele===1)
         {
             if($i<6)
@@ -95,28 +105,30 @@ if(isset($_POST['done']))
             $indx2=$ch[$i];
             $indx1=$indx.$indx2;
             $var=$_POST[$indx1];
-         //   echo $var."<br> AIS ";
+            echo $var."<br> AIS ";
+
             if($var>0)
             {
                $v1=$_SESSION['U_ID'];
+               echo "EHY ";
         //       echo " PLZ ".$v1;
           //     echo $v1." ".$indx1." ".$var." ".$Trs;
               
-            $sq="INSERT INTO `Rel` (`U_ID`,`Pro_ID`,`Pro_Count`,`Trans_Num`) VALUES ('$v1','$indx1','$var','$Trs')";
+               $sq="INSERT INTO `Rel` (`U_ID`,`Pro_ID`,`Pro_Count`,`Trans_Num`) VALUES ('$v1','$indx1','$var','$Trs')";
                 if($con->multi_query($sq) === TRUE)
                 {
-             //       echo "SUCCESS<br><br>";
+                    echo "SUCCESS<br><br>";
                 }
                 else
                 {
-              //      echo "Error: " . $esql . "<br>" . $con->error;
+                    echo "Error: " . $esql . "<br>" . $con->error;
                 }
               //  $_POST[$indx1]=0;
                 //$Trs+=1;
             }
         }
 
-    $_POST['done']=NULL;
+ //   $_POST['done']=NULL;
 
     }
 
