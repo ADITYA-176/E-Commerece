@@ -84,7 +84,7 @@ $_SESSION['fl']=0;
     }
 </script>
         <div class="bulb1">
-        <img src="Interiorlight1.jpg" class="img-fluid">
+        <img src="P13.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> Bamboo Lights </p>
@@ -108,7 +108,7 @@ $_SESSION['fl']=0;
                 </div>
         </div>
         <div class="bulb2">
-            <img src="Interior light2.jpg" class="img-fluid">
+            <img src="P14.jpg" class="img-fluid">
             <div class="Bor1"></div>
             <div class="font-head">
             <p> Wooden Wall Light </p>
@@ -135,7 +135,7 @@ $_SESSION['fl']=0;
              
         </div>
             <div class="bulb3">
-                <img src="Interior light3.jpg" class="img-fluid" >
+                <img src="P15.jpg" class="img-fluid" >
                 <div class="Bor1"></div>
                 <div class="font-head">
                 <p> LED Outdoor Wall Light </p>
@@ -159,7 +159,7 @@ $_SESSION['fl']=0;
                 </div>
                 </div>
                 <div class="bulb4">
-        <img src="Interior light4.jpg" class="img-fluid">
+        <img src="P16.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> Glass Fitting Wall Lamp </p>
@@ -187,7 +187,7 @@ $_SESSION['fl']=0;
              
         </div>
        <div class="bulb5">
-        <img src="Interior light5.jpg" class="img-fluid">
+        <img src="P17.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> Smart Lamp </p>
@@ -212,7 +212,7 @@ $_SESSION['fl']=0;
                 </div>
         </div>
         <div class="bulb6">
-        <img src="Interior light6.jpg" class="img-fluid">
+        <img src="P18.jpg" class="img-fluid">
         <div class="Bor1"></div>
         <div class="font-head">
         <p> Crystal Jhoomer </p>

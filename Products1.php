@@ -13,6 +13,7 @@
     <title>User</title>
 </head>
 <body>
+<script src="JS.js"></script>
 <a href="Web1.php">
             <div class="logo">
             <img src="Logo.png" widht="1%" height="1%" alt="HTML tutorial" />
@@ -36,6 +37,8 @@
             <li><a class="dropdown-item" href="Products2.php">Decorative Lights</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Products3.php">Interior Lights</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Products4.php">New Products</a></li>
           </ul>
           <li class="nav-item">
           <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px; margin-left:25cm" href="MyAcc.php">My Account</a>
@@ -229,6 +232,5 @@
     </div>
         
 </body>
-<script src="JS.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </html>
