@@ -187,21 +187,28 @@ check();
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="Products4.php">New Products</a></li>
           </ul>
-          <li class="nav-item">
-          <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px; margin-left:25cm" href="MyAcc.php">My Account</a>
+          <li class="nav-item" style="margin-top:7px; ">
+            <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px; margin-top: 5px; margin-left:0.8cm;" href="General.php">General</a>
         </li>
-        <li class="nav-item">
+          <li class="nav-item" style="margin-top:7px; ">
+          <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px; margin-left:22cm" href="MyAcc.php">My Account</a>
+        </li>
+        <li class="nav-item" style="margin-top:7px; ">
             <a class="nav-link active" aria-current="page" style="color: rgb(49, 157, 229); display:inline; font-size:18px;  margin-left:1cm;" href="Login.php">Logout</a>
           </li>
         </li>
+        
       </ul>
     </div>
   </div>
 </nav>
 
 <!!! NAV > 
+
+
+
     <div class="basicinfo" style="width: 24cm; margin-left:7cm; background:rgb(228, 228, 228);border-radius: 5px; height: auto;">
-        <h1 style="margin-left:8cm ; margin-top:1cm;"> Account Details </h1>
+        <h1 style="margin-left:8cm ; margin-top:1cm;"> Account Details   </h1>
         <style>
             td 
             {
@@ -227,16 +234,26 @@ check();
                  
             </div>
             <tr>
-                <td style="border: 5px None black; width: 10cm; text-align: center;  ">
+                <td style="border: 5px None black; width: 10cm; text-align: center; border-bottom: 1px solid black; ">
                     <p style="font-size: 20px;">
                     E-Mail:
                     </p> 
                 </td>
-                <td  style="border: 5px None black; width: 12cm; text-align: center; border-left: 1px solid black; ">
+                <td  style="border: 5px None black; width: 12cm; text-align: center; border-bottom: 1px solid black; border-left: 1px solid black; ">
                    <p style="font-size: 20px;"> <?php echo $_SESSION['email']; ?>
                     </p>
                 </td>
+                
             </tr>
+
+
+            <div class="cls" style="border-right:100px solid black">
+                 
+            </div>
+            
+
+
+
         </table>
         <div class="Transcations" style="margin-top:1.7cm ;">
             <p style="margin-left:6cm ; font-size:40px;">

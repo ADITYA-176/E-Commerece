@@ -41,9 +41,14 @@ check();
         <p style="margin-left:1cm ;  font-size: 20px;  color: rgb(49, 157, 229);">
             Transactions
         </p>
+        <a href="Users.php" style="text-decoration: none;">
+            <p style="margin-left:1cm ;  font-size: 20px;  color: rgb(49, 157, 229);">
+                Users
+            </p>
+        </a>
         </a>
         <a href="Login.php" style="text-decoration:none ;">
-        <p style="margin-left:27.5cm ;  font-size: 20px; color: rgb(49, 157, 229); ">
+        <p style="margin-left:25.5cm ;  font-size: 20px; color: rgb(49, 157, 229); ">
             Logout
         </p>
         </a>
@@ -216,3 +221,4 @@ check();
 
 </body>
 </html>
+
